@@ -1,0 +1,60 @@
+\begin{center}
+\begin{longtable}{clccccc}
+\caption{Validation performance of all 42 backorder configurations. Configurations are
+ranked by validation macro F1; the official test split was not used for this ranking.}
+\label{tab:bo-full}\\
+\toprule
+Rank & Configuration & Macro F1 & AP & ROC-AUC & Prec. & Rec. \\
+\midrule
+\endfirsthead
+\multicolumn{7}{c}{{\bfseries \tablename\ \thetable\ -- continued}} \\
+\toprule
+Rank & Configuration & Macro F1 & AP & ROC-AUC & Prec. & Rec. \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+1 & XGBoost + ADASYN & 0.6130 & 0.1393 & 0.9315 & 0.1806 & 0.3292 \\
+2 & XGBoost + Borderline-SMOTE & 0.6119 & 0.1446 & 0.9285 & 0.1883 & 0.2968 \\
+3 & XGBoost + SMOTE & 0.6066 & 0.1346 & 0.9331 & 0.1700 & 0.3142 \\
+4 & XGBoost + SMOTE+Tomek & 0.6019 & 0.1301 & 0.9317 & 0.1655 & 0.2918 \\
+5 & XGBoost & 0.5747 & 0.1956 & 0.9331 & 0.0983 & 0.6958 \\
+6 & RF + Borderline-SMOTE & 0.5740 & 0.1520 & 0.9300 & 0.0978 & 0.6135 \\
+7 & RF-balanced + Borderline-SMOTE & 0.5735 & 0.1475 & 0.9308 & 0.0972 & 0.6160 \\
+8 & RF-balanced + SMOTE & 0.5730 & 0.1660 & 0.9367 & 0.0965 & 0.6783 \\
+9 & RF + ADASYN & 0.5726 & 0.1618 & 0.9368 & 0.0961 & 0.6808 \\
+10 & RF + SMOTE & 0.5718 & 0.1627 & 0.9365 & 0.0952 & 0.6758 \\
+11 & RF-balanced + ADASYN & 0.5718 & 0.1660 & 0.9380 & 0.0951 & 0.6683 \\
+12 & RF + SMOTE+Tomek & 0.5717 & 0.1665 & 0.9361 & 0.0950 & 0.6733 \\
+13 & RF-balanced + SMOTE+Tomek & 0.5712 & 0.1707 & 0.9358 & 0.0945 & 0.6608 \\
+14 & RF-balanced & 0.5662 & 0.1963 & 0.9346 & 0.0891 & 0.6858 \\
+15 & DT + ADASYN & 0.5550 & 0.0897 & 0.8632 & 0.0774 & 0.6733 \\
+16 & DT + SMOTE & 0.5534 & 0.0827 & 0.8721 & 0.0758 & 0.6733 \\
+17 & DT + SMOTE+Tomek & 0.5534 & 0.0820 & 0.8720 & 0.0758 & 0.6733 \\
+18 & DT + Borderline-SMOTE & 0.5504 & 0.0854 & 0.8314 & 0.0724 & 0.6234 \\
+19 & DT & 0.5369 & 0.1338 & 0.8448 & 0.0617 & 0.7382 \\
+20 & RF & 0.5251 & 0.2833 & 0.9494 & 1.0000 & 0.0274 \\
+21 & XGBoost + RandUnder & 0.5070 & 0.1406 & 0.9351 & 0.0435 & 0.8678 \\
+22 & RF + RandUnder & 0.5056 & 0.1572 & 0.9443 & 0.0431 & 0.8853 \\
+23 & RF-balanced + RandUnder & 0.5049 & 0.1542 & 0.9428 & 0.0426 & 0.8778 \\
+24 & LR & 0.4983 & 0.0103 & 0.6068 & 0.0000 & 0.0000 \\
+25 & DT + RandUnder & 0.4840 & 0.0248 & 0.8358 & 0.0323 & 0.8504 \\
+26 & LR-balanced + RandUnder & 0.4316 & 0.0165 & 0.6775 & 0.0116 & 0.4738 \\
+27 & LR + RandUnder & 0.4316 & 0.0165 & 0.6775 & 0.0116 & 0.4738 \\
+28 & LR-balanced + Borderline-SMOTE & 0.3635 & 0.0189 & 0.7359 & 0.0114 & 0.7830 \\
+29 & LR + Borderline-SMOTE & 0.3635 & 0.0189 & 0.7359 & 0.0114 & 0.7830 \\
+30 & LR-balanced & 0.3592 & 0.0197 & 0.7419 & 0.0119 & 0.8329 \\
+31 & LR-balanced + SMOTE+Tomek & 0.3555 & 0.0215 & 0.7524 & 0.0116 & 0.8254 \\
+32 & LR + SMOTE+Tomek & 0.3555 & 0.0215 & 0.7524 & 0.0116 & 0.8254 \\
+33 & LR-balanced + SMOTE & 0.3554 & 0.0211 & 0.7523 & 0.0116 & 0.8279 \\
+34 & LR + SMOTE & 0.3554 & 0.0211 & 0.7523 & 0.0116 & 0.8279 \\
+35 & LR-balanced + ADASYN & 0.3541 & 0.0211 & 0.7554 & 0.0116 & 0.8354 \\
+36 & LR + ADASYN & 0.3534 & 0.0209 & 0.7541 & 0.0116 & 0.8354 \\
+37 & NB + Borderline-SMOTE & 0.1610 & 0.0079 & 0.5750 & 0.0078 & 0.9526 \\
+38 & NB + RandUnder & 0.1246 & 0.0159 & 0.6910 & 0.0074 & 0.9626 \\
+39 & NB + SMOTE+Tomek & 0.0799 & 0.0076 & 0.5590 & 0.0071 & 0.9776 \\
+40 & NB + SMOTE & 0.0799 & 0.0076 & 0.5590 & 0.0071 & 0.9776 \\
+41 & NB + ADASYN & 0.0781 & 0.0076 & 0.5580 & 0.0071 & 0.9776 \\
+42 & NB & 0.0681 & 0.0075 & 0.5562 & 0.0070 & 0.9850 \\
+\end{longtable}
+\end{center}

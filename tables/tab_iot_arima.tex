@@ -1,0 +1,17 @@
+\begin{table}[H]
+\centering
+\caption{ARIMA orders and residual diagnostics on the 70 FD001 training engines.
+Orders were selected by median AIC on 12 training engines; diagnostics are reported as
+medians across the training engines.}
+\label{tab:arima}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Channel & Order & Median AIC & Median RMSE & Ljung--Box pass \\
+\midrule
+Compressor Pressure (s07) & (1, 0, 1) & 240.8 & 0.4403 & 92.9\% \\
+Coolant Bleed (s17) & (1, 0, 1) & 571.6 & 1.0193 & 92.9\% \\
+Temperature (s03) & (2, 0, 2) & 1127.4 & 4.1853 & 98.6\% \\
+\bottomrule
+\end{tabular}
+\end{table}

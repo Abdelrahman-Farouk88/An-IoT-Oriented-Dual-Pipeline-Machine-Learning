@@ -1,0 +1,21 @@
+\begin{table}[H]
+\centering
+\caption{Five-fold cross-validation on the 300{,}000-row backorder subset for the
+validation-selected top three configurations and the prespecified baselines. Resampling
+is applied inside each training fold only. The final column is the macro F1 of the
+pooled out-of-fold predictions.}
+\label{tab:bo-cv}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Configuration & CV macro F1 & CV AP & CV ROC-AUC & OOF macro F1 \\
+\midrule
+XGBoost + ADASYN & 0.6068 $\pm$ 0.007 & 0.1475 & 0.9280 & 0.6068 \\
+XGBoost + Borderline-SMOTE & 0.6133 $\pm$ 0.010 & 0.1579 & 0.9295 & 0.6133 \\
+XGBoost + SMOTE & 0.6096 $\pm$ 0.012 & 0.1503 & 0.9283 & 0.6095 \\
+RF & 0.5216 $\pm$ 0.008 & 0.2739 & 0.9518 & 0.5216 \\
+RF-balanced & 0.5662 $\pm$ 0.006 & 0.1929 & 0.9403 & 0.5663 \\
+XGBoost & 0.5715 $\pm$ 0.003 & 0.2141 & 0.9355 & 0.5716 \\
+\bottomrule
+\end{tabular}
+\end{table}

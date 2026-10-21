@@ -1,0 +1,16 @@
+\begin{table}[H]
+\centering
+\caption{IoT early-warning performance on the untouched FD001 engine holdout
+(48 features, SMOTE inside training folds). Brackets are 95\% engine-cluster bootstrap
+confidence intervals.}
+\label{tab:iot-models}
+\small
+\begin{tabular}{lccccccc}
+\toprule
+Model & Acc. & Prec. & Rec. & Macro F1 [95\% CI] & AP & ROC-AUC [95\% CI] & Brier \\
+\midrule
+Random Forest & 0.9499 & 0.7829 & 0.9269 & 0.9094 [0.881, 0.936] & 0.9458 & 0.9889 [0.983, 0.994] & 0.0356 \\
+XGBoost & 0.9526 & 0.8239 & 0.8753 & 0.9104 [0.891, 0.928] & 0.9409 & 0.9864 [0.979, 0.992] & 0.0392 \\
+\bottomrule
+\end{tabular}
+\end{table}

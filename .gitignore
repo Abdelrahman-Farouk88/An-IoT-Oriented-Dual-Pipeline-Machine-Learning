@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+data/*.csv
+CMaps/*.txt
+results/models/
+results/bo_curves.json
+results/bo_final_predictions.csv
+results/bo_oof_predictions.csv
+results/iot_features_FD*.csv

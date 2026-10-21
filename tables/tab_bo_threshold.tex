@@ -1,0 +1,27 @@
+\begin{table}[H]
+\centering
+\caption{Thresholds selected on out-of-fold predictions and evaluated on the official
+test split. Cost is reported per 1{,}000 records for a false-negative:false-positive
+cost ratio of the indicated value. The macro-F1 row selects the threshold that maximises
+out-of-fold macro F1.}
+\label{tab:bo-threshold}
+\small
+\begin{tabular}{llcccc}
+\toprule
+Model & Criterion & Threshold & Test precision & Test recall & Cost / 1k \\
+\midrule
+Champion & FN:FP = 1:1 & 0.980 & 0.8333 & 0.0019 & 11.09 \\
+Champion & FN:FP = 5:1 & 0.720 & 0.3080 & 0.1057 & 52.29 \\
+Champion & FN:FP = 10:1 & 0.390 & 0.2009 & 0.2980 & 91.11 \\
+Champion & FN:FP = 20:1 & 0.280 & 0.1712 & 0.3940 & 155.76 \\
+Champion & FN:FP = 50:1 & 0.090 & 0.0973 & 0.6406 & 265.54 \\
+Champion & Macro-F1 optimum & 0.590 & 0.2602 & 0.1678 & -- \\
+XGBoost & FN:FP = 1:1 & 0.990 & 0.4074 & 0.0041 & 11.12 \\
+XGBoost & FN:FP = 5:1 & 0.930 & 0.3207 & 0.1737 & 49.96 \\
+XGBoost & FN:FP = 10:1 & 0.850 & 0.2410 & 0.3025 & 88.03 \\
+XGBoost & FN:FP = 20:1 & 0.700 & 0.1740 & 0.4390 & 147.72 \\
+XGBoost & FN:FP = 50:1 & 0.320 & 0.1042 & 0.6559 & 253.64 \\
+XGBoost & Macro-F1 optimum & 0.890 & 0.2814 & 0.2478 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

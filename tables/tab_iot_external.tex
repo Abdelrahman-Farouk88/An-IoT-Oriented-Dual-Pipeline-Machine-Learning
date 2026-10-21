@@ -1,0 +1,22 @@
+\begin{table}[H]
+\centering
+\caption{External domain-shift stress tests. The same 15 FD001 sensor channels are
+used in every dataset; FD002 and FD004 are scaled within six operating-regime clusters.
+FD001 is the untouched 30-engine holdout; FD002--FD004 are 30\% engine holdouts.}
+\label{tab:iot-external}
+\small
+\begin{tabular}{llcccc}
+\toprule
+Dataset & Model & Features & Macro F1 & ROC-AUC & AP \\
+\midrule
+FD001 (holdout) & Random Forest & 48 & 0.9094 & 0.9889 & 0.9458 \\
+FD002 (260 engines) & Random Forest & 48 & 0.9221 & 0.9897 & 0.9501 \\
+FD003 (100 engines) & Random Forest & 48 & 0.9234 & 0.9918 & 0.9523 \\
+FD004 (249 engines) & Random Forest & 48 & 0.8966 & 0.9855 & 0.8989 \\
+FD001 (holdout) & XGBoost & 48 & 0.9104 & 0.9864 & 0.9409 \\
+FD002 (260 engines) & XGBoost & 48 & 0.9173 & 0.9874 & 0.9439 \\
+FD003 (100 engines) & XGBoost & 48 & 0.9211 & 0.9902 & 0.9466 \\
+FD004 (249 engines) & XGBoost & 48 & 0.8969 & 0.9847 & 0.9107 \\
+\bottomrule
+\end{tabular}
+\end{table}

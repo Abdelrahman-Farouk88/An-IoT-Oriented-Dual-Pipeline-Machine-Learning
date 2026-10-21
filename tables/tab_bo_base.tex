@@ -1,0 +1,17 @@
+\begin{table}[H]
+\centering
+\caption{Base-rate shift for the validation-selected champion. The training prevalence
+is 0.669\% and the official-test prevalence is 1.110\%. Prior correction rescales the
+predicted probabilities to the test prevalence; it is reported as a sensitivity analysis,
+not as a tuned result.}
+\label{tab:bo-base}
+\small
+\begin{tabular}{lcccccc}
+\toprule
+Probabilities & Macro F1 & AP & ROC-AUC & Prec. & Rec. & Brier \\
+\midrule
+Unadjusted & 0.6080 & 0.1616 & 0.9087 & 0.2324 & 0.2169 & 0.0137 \\
+Prior-corrected & 0.6149 & 0.1616 & 0.9087 & 0.1970 & 0.3099 & 0.0172 \\
+\bottomrule
+\end{tabular}
+\end{table}
