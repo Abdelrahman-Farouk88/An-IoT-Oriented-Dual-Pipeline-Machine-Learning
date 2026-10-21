@@ -8,7 +8,7 @@ It contains the experiment scripts, selected derived result files, LaTeX tables,
 
 ## What the code reproduces
 
-- **IoT pipeline (NASA C-MAPSS FD001):** causal, per-engine ARIMA residual features; past-only rolling features; engine-grouped 5-fold cross-validation; a 70/30 engine-grouped holdout; a paired 45-versus-48-feature ablation; permutation importance and SHAP.
+- **IoT pipeline (NASA C-MAPSS FD001):** causal, per-engine ARIMA residual features; causal rolling features (no future cycles); engine-grouped 5-fold cross-validation; a 70/30 engine-grouped holdout; a paired 45-versus-48-feature ablation; permutation importance and SHAP.
 - **External domain-shift tests:** FD002, FD003, and FD004 using the same 15 FD001 sensor channels and the same 48-feature schema, with no external tuning.
 - **Backorder pipeline (public Kaggle data):** a 42-configuration resampling/classifier screen on a 240,000/60,000 split of the 300,000-row training subset; five-fold cross-validation of the top three configurations and three prespecified baselines; one-time evaluation on the official 242,075-row test split; bootstrap CIs; McNemar and DeLong tests; precision-recall/AP; Platt calibration; cost-sensitive thresholds; base-rate prior correction; permutation importance and SHAP.
 - **Paper artefacts:** the nine LaTeX tables in `tables/` and the ten figures used in the manuscript in `figures/`.
