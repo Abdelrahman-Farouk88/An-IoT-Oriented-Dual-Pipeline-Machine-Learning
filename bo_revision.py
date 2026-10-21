@@ -4,7 +4,7 @@
 - top-3 configurations + baselines re-evaluated with 5-fold CV
 - official test split touched once, with bootstrap CIs, McNemar and DeLong tests
 - PR/calibration, cost-sensitive thresholds, permutation importance, SHAP
-- honest learning curve and base-rate-shift analysis
+- base-rate-shift analysis
 """
 import warnings
 warnings.filterwarnings('ignore')
