@@ -1,0 +1,17 @@
+\caption{Principal experimental configuration. Complete implementation details and
+version-pinned requirements are provided in the supplementary repository.}
+\label{tab:reproducibility}
+\small
+\begin{tabular}{p{3.5cm}p{11.0cm}}
+\toprule
+Item & Specification \\
+\midrule
+Reproducibility controls & Python 3.13.2 on Windows 11; random seed 42; package versions: NumPy 2.3.3, pandas 2.3.2, scikit-learn 1.9.0, XGBoost 3.4.1, imbalanced-learn 0.14.2, statsmodels 0.15.0, SciPy 1.18.1, and SHAP 0.54.1. \\
+IoT features & Fifteen C-MAPSS sensor channels; current-cycle, 5-cycle causal rolling mean, and 5-cycle causal rolling standard deviation (45 features). Three per-engine, one-step-ahead ARIMA residuals are appended for the 48-feature condition; warm-up 20 cycles and refit interval 10 cycles. \\
+IoT evaluation & Engine-grouped 70/30 holdout; 5-fold \texttt{StratifiedGroupKFold}; SMOTE only inside training folds. ARIMA order search uses $p,q\in\{0,1,2\}$ and $d\in\{0,1\}$ on 12 training engines. \\
+IoT models & Random Forest: 300 trees, balanced class weights. XGBoost: 300 trees, log-loss objective. Both use seed 42 and four parallel jobs. \\
+Backorder protocol & Stratified 300,000-row training subset split into 240,000 screening-training and 60,000 validation records; 42 configurations; 5-fold CV of the selected top three plus three prespecified baselines; one official-test evaluation (242,075 records). \\
+Backorder models & Random Forest: 300 trees, depth 15; XGBoost: 300 trees, depth 6, learning rate 0.1, training-fold \texttt{scale\_pos\_weight}; logistic regression: maximum 1,000 iterations; decision tree: depth 12. Resampling is training-fold-only. \\
+Uncertainty and interpretation & Engine-cluster or stratified bootstrap confidence intervals; McNemar and DeLong tests; PR/AP, Brier score, Platt calibration, cost-threshold analysis, permutation importance, and SHAP. \\
+\bottomrule
+\end{tabular}

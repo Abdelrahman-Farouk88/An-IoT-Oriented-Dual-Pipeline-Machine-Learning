@@ -17,7 +17,7 @@ It contains the experiment scripts, selected derived result files, LaTeX tables,
 - **Cross-subset replications and strict transfer:** FD002, FD003, and FD004 using the same 15 FD001 sensor channels and the same 48-feature schema. Models are retrained on each subset's training engines with fixed hyperparameters. A separate strict transfer test freezes FD001 preprocessing, ARIMA orders, feature schema, and models, and uses no target labels; macro F1 degrades sharply on FD002 and FD004.
 - **Backorder pipeline (public Kaggle data):** a 42-configuration resampling/classifier screen on a 240,000/60,000 split of the 300,000-row training subset; five-fold cross-validation of the top three configurations and three prespecified baselines; one-time evaluation on the official 242,075-row test split; bootstrap CIs; McNemar and DeLong tests; precision-recall/AP; Platt calibration; cost-sensitive thresholds; base-rate prior correction; permutation importance and SHAP.
 - **Simulation-based maintenance--inventory study:** a discrete-event inventory simulation with 100 assets, five SKUs, five lead-time profiles, 600 cycles, and an explicit random asset-to-SKU mapping. The main study uses Pipeline A risk trajectories only. Reactive, calendar, risk-triggered, and oracle replacement policies are evaluated under common random numbers across 20 held-out seeds, with a sensitivity analysis over failure cost and lead-time scaling. A secondary B-informed controller queries Pipeline B through a stated state-to-feature mapping; it is a surrogate and reports a null cost result against a shuffled control.
-- **Paper artefacts:** the fourteen LaTeX table files in `tables/` (plus three inline tables) and the thirteen figures used in the manuscript in `figures/` (PDF and PNG).
+- **Paper artefacts:** the fifteen LaTeX table files in `tables/` (plus three inline tables) and the thirteen figures used in the manuscript in `figures/` (PDF and PNG).
 
 The paper reports a null result for the three ARIMA residual features: the 45-versus-48 ablation is not statistically detectable. The code retains that comparison. It also reports negative strict transfer and a neutral B-controller result; both are reproduced from the saved artefacts.
 
@@ -159,7 +159,7 @@ python make_tables.py
 python make_figures_revision.py
 ```
 
-`make_tables.py` uses the result JSON/CSV files in `results/` and writes the ten component tables to `tables/`; `make_sim_outputs.py` adds the three simulation tables (Tables 15--17). The mapping table `tab_b_mapping.tex` is included directly.
+`make_tables.py` uses the result JSON/CSV files in `results/` and writes the ten component tables to `tables/`; `make_sim_outputs.py` adds the three simulation tables (Tables 15--17). The mapping and reproducibility tables (`tab_b_mapping.tex` and `tab_reproducibility.tex`) are included directly.
 
 `make_figures_revision.py` uses both the saved result files and larger intermediates produced by the pipelines (`iot_features_FD001.csv`, `iot_curve_*.npz`, `bo_curves.json`, `bo_oof_predictions.csv`). Those large intermediates and the full prediction files are omitted from this release to keep it small. The figure PDFs used in the manuscript are included in `figures/`; rerun the pipelines first if you need to regenerate them from scratch.
 
@@ -182,7 +182,7 @@ release/
   requirements.txt
   results/                     selected JSON/CSV result artefacts, including the
                                simulation risk curves, tuned configurations, and runs
-  tables/                      fourteen LaTeX tables
+  tables/                      fifteen LaTeX tables
   figures/                     thirteen manuscript figures (PDF and PNG)
   data/README.md               backorder data instructions
   CMaps/README.md              C-MAPSS data instructions
