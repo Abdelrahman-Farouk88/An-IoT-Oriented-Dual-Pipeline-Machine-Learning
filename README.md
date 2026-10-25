@@ -205,4 +205,4 @@ Selected results include the FD001/FD002/FD003/FD004 metrics, strict-transfer me
 
 ## Code availability
 
-This directory is the supplementary release submitted with the manuscript. A public repository URL will be added upon acceptance. The release contains no proprietary data and no credentials.
+This directory is the supplementary release submitted with the manuscript. The public repository is [An-IoT-Oriented-Dual-Pipeline-Machine-Learning](https://github.com/Abdelrahman-Farouk88/An-IoT-Oriented-Dual-Pipeline-Machine-Learning). The release contains no proprietary data and no credentials.
