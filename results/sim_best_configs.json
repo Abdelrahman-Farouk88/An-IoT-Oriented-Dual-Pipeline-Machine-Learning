@@ -1,0 +1,38 @@
+[
+  {
+    "policy": "reactive",
+    "tau": 0.9,
+    "calendar_age": 150,
+    "s": 0,
+    "q": 4,
+    "mean_cost": 393202.3,
+    "sd_cost": 11973.392576412454
+  },
+  {
+    "policy": "calendar",
+    "tau": 0.9,
+    "calendar_age": 120,
+    "s": 4,
+    "q": 4,
+    "mean_cost": 112056.6,
+    "sd_cost": 879.384658598146
+  },
+  {
+    "policy": "risk",
+    "tau": 0.95,
+    "calendar_age": 150,
+    "s": 0,
+    "q": 4,
+    "mean_cost": 64212.6,
+    "sd_cost": 1302.990167951308
+  },
+  {
+    "policy": "oracle",
+    "tau": 0.9,
+    "calendar_age": 150,
+    "s": 0,
+    "q": 4,
+    "mean_cost": 58809.2,
+    "sd_cost": 1455.5505869296028
+  }
+]

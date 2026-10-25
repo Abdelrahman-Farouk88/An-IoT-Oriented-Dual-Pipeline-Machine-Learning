@@ -1,4 +1,4 @@
-"""Parallel external stress tests for the IoT pipeline (FD002-FD004).
+"""Parallel cross-subset replications for the IoT pipeline (FD002-FD004).
 
 The per-engine ARIMA residual computation is independent across engines and is the
 runtime bottleneck; this script distributes those tasks over worker processes while

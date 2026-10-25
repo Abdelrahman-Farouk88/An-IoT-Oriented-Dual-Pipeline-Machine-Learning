@@ -1,0 +1,18 @@
+\begin{table}[H]
+\centering
+\caption{Pipeline B-informed inventory controller on 20 held-out seeds. B probabilities are queried every ten cycles from a state-to-feature mapping and add a discrete safety buffer when the predicted backorder risk exceeds the tuned threshold. The shuffled control uses the same buffer and adjustment frequency but randomly permutes B probabilities across SKUs. Values are means; the B-adjusted configuration was selected on ten training seeds.}
+\label{tab:sim-b}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccccccc}
+\toprule
+Policy & Total cost & Failures & Inventory/order & Fill (\%) & Uptime (\%) & Mean $p_B$ & Adjusted (\%) \\
+\midrule
+A-only risk ($s=0$) & 64,380 & 0.00 & 11,571 & 88.7 & 99.37 & 0.0000 & 0.0 \\
+Static A-only (best) & 64,380 & 0.00 & 11,571 & 88.7 & 99.37 & 0.0000 & 0.0 \\
+B-adjusted & 64,433 & 0.00 & 11,833 & 89.9 & 99.38 & 0.0196 & 3.0 \\
+B-shuffled control & 64,354 & 0.00 & 11,776 & 89.9 & 99.38 & 0.0194 & 3.0 \\
+Oracle & 58,624 & 0.00 & 11,317 & 88.7 & 99.43 & 0.0000 & 0.0 \\
+\bottomrule
+\end{tabular}
+\end{table}

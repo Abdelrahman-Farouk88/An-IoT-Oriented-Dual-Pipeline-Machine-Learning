@@ -131,7 +131,7 @@ Model & Acc. & Prec. & Rec. & Macro F1 [95\% CI] & AP & ROC-AUC [95\% CI] & Brie
 \end{table}
 """)
 
-# External
+# Cross-subset replications
 lines = []
 def add_ext(fd, label, model, m, feats):
     lines.append(f"{label} & {model} & {feats} & {f4(m['macro_f1'])} & {f4(m['roc_auc'])} & {f4(m['ap'])} \\\\")
@@ -142,14 +142,47 @@ for model in ['Random Forest', 'XGBoost']:
         add_ext(fd, f'{fd} ({r["n_engines"]} engines)', model, r['holdout'][model], r['n_features'])
 write('tab_iot_external.tex', r"""\begin{table}[H]
 \centering
-\caption{External domain-shift stress tests. The same 15 FD001 sensor channels are
-used in every dataset; FD002 and FD004 are scaled within six operating-regime clusters.
-FD001 is the untouched 30-engine holdout; FD002--FD004 are 30\% engine holdouts.}
+\caption{Cross-subset replications. The same 15 FD001 sensor channels are used in every
+dataset; FD002 and FD004 are scaled within six operating-regime clusters. Models are
+retrained on each subset's training engines; FD001 is the untouched 30-engine holdout
+and FD002--FD004 are 30\% engine holdouts. Strict frozen transfer is reported separately
+in Table~\ref{tab:iot-transfer}.}
 \label{tab:iot-external}
 \small
 \begin{tabular}{llcccc}
 \toprule
 Dataset & Model & Features & Macro F1 & ROC-AUC & AP \\
+\midrule
+""" + "\n".join(lines) + r"""
+\bottomrule
+\end{tabular}
+\end{table}
+""")
+
+# Strict FD001 transfer
+tr = j('iot_transfer_results.json')
+lines = []
+for fd in ['FD002', 'FD003', 'FD004']:
+    for model in ['Random Forest', 'XGBoost']:
+        m = tr['targets'][fd]['models'][model]
+        w = m['within_subset']
+        lines.append(f"{fd} & {model} & {f4(w['macro_f1'])} & "
+                     f"{ci(m, 'macro_f1')} & {f4(m['roc_auc'])} & {f4(m['ap'])} & "
+                     f"{f4(m['gap_vs_within']['macro_f1'])} \\\\")
+write('tab_iot_transfer.tex', r"""\begin{table}[H]
+\centering
+\caption{Strict cross-dataset transfer from FD001 to FD002--FD004. FD001 preprocessing,
+ARIMA orders, feature schema, and models are frozen; target labels are never used for
+fitting, scaling, or threshold selection. ``Within'' retrains on each target's 70\%
+training engines and evaluates the same 30\% engine holdout. Transfer columns report the
+frozen FD001 model on that holdout; brackets are 95\% engine-cluster bootstrap
+confidence intervals. $\Delta$F1 is within-subset F1 minus transfer F1.}
+\label{tab:iot-transfer}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llccccc}
+\toprule
+Target & Model & Within F1 & Transfer F1 [95\% CI] & Transfer AUC & Transfer AP & $\Delta$F1 \\
 \midrule
 """ + "\n".join(lines) + r"""
 \bottomrule

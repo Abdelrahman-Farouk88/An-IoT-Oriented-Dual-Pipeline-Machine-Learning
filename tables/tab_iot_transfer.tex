@@ -1,0 +1,24 @@
+\begin{table}[H]
+\centering
+\caption{Strict cross-dataset transfer from FD001 to FD002--FD004. FD001 preprocessing,
+ARIMA orders, feature schema, and models are frozen; target labels are never used for
+fitting, scaling, or threshold selection. ``Within'' retrains on each target's 70\%
+training engines and evaluates the same 30\% engine holdout. Transfer columns report the
+frozen FD001 model on that holdout; brackets are 95\% engine-cluster bootstrap
+confidence intervals. $\Delta$F1 is within-subset F1 minus transfer F1.}
+\label{tab:iot-transfer}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llccccc}
+\toprule
+Target & Model & Within F1 & Transfer F1 [95\% CI] & Transfer AUC & Transfer AP & $\Delta$F1 \\
+\midrule
+FD002 & Random Forest & 0.9221 & 0.4616 [0.458, 0.466] & 0.6281 & 0.2986 & 0.4606 \\
+FD002 & XGBoost & 0.9173 & 0.5385 [0.529, 0.548] & 0.7341 & 0.4194 & 0.3788 \\
+FD003 & Random Forest & 0.9234 & 0.7459 [0.664, 0.812] & 0.9690 & 0.8343 & 0.1775 \\
+FD003 & XGBoost & 0.9211 & 0.7988 [0.742, 0.844] & 0.9766 & 0.8676 & 0.1224 \\
+FD004 & Random Forest & 0.8966 & 0.4668 [0.464, 0.470] & 0.5964 & 0.2220 & 0.4299 \\
+FD004 & XGBoost & 0.8969 & 0.5431 [0.534, 0.554] & 0.7425 & 0.3667 & 0.3538 \\
+\bottomrule
+\end{tabular}
+\end{table}

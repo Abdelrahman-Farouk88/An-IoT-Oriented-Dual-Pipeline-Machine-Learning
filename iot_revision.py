@@ -388,7 +388,7 @@ def run_fd001(orders):
 
 
 def run_external(fd, orders):
-    log(f"=== External validation: {fd} ===")
+    log(f"=== Cross-subset replication: {fd} ===")
     df, sensors = load_fd(fd)
     units = df.unit.unique()
     tr_units, te_units = train_test_split(units, test_size=0.3, random_state=SEED)

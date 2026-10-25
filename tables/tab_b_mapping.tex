@@ -1,0 +1,22 @@
+\begin{table}[H]
+\centering
+\caption{State-to-feature mapping used to query Pipeline~B inside the inventory simulation. The mapping is a transparent surrogate for a product-to-part linkage, not an empirical bill of materials. Features not listed in the first column are set to their training medians or to zero.}
+\label{tab:b-mapping}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{3.4cm}p{7.6cm}p{2.4cm}}
+\toprule
+Pipeline~B feature(s) & Simulation analogue & Value \\
+\midrule
+\texttt{national\_inv}, \texttt{in\_transit\_qty} & Inventory position (on hand plus on order minus backorders) and units on order & Integer \\
+\texttt{lead\_time} & SKU mean lead time & 2--6 cycles \\
+\texttt{forecast\_3/6/9\_month} & Demand in the previous 3/6/9 cycles & Integer count \\
+\texttt{sales\_1/3/6/9\_month} & Demand in the previous 1/3/6/9 cycles & Integer count \\
+\texttt{min\_bank} & Nominal reorder point $s$ & 0 or 2 \\
+\texttt{potential\_issue}, \texttt{pieces\_past\_due}, \texttt{local\_bo\_qty} & Any backorder in the queue; number of backordered assets & 0/1; integer \\
+\texttt{perf\_6/12\_month\_avg} & Immediate fill rate over the previous 6/12 cycles & 0--1 \\
+\texttt{deck\_risk} & Inventory position below zero & 0/1 \\
+\texttt{oe\_constraint}, \texttt{ppap\_risk}, \texttt{stop\_auto\_buy}, \texttt{rev\_stop} & Supplier and purchasing flags not represented in the testbed & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}

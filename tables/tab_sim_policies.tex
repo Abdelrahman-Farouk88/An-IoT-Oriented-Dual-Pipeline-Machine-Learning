@@ -1,0 +1,17 @@
+\begin{table}[H]
+\centering
+\caption{Simulation-based policy comparison on 20 held-out seeds (100 assets, 600 cycles, five SKUs). Costs are mean values; the total-cost column reports the 95\% confidence-interval half-width in parentheses. Inventory/order combines holding, backorder, and purchasing costs. The cost decomposition is shown in Fig.~\ref{fig:sim-policies}.}
+\label{tab:sim-policies}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lccccccc}
+\toprule
+Policy & Configuration & Total cost & Inventory/order & Failures & Planned & Fill (\%) & Uptime (\%) \\
+\midrule
+Reactive & $s=0$, $Q=4$ & 391,621 (3,359) & 11,190 & 240.45 & 0.0 & 89.1 & 98.68 \\
+Calendar & age=120, $s=4$, $Q=4$ & 111,978 (322) & 32,273 & 0.05 & 400.0 & 72.2 & 98.69 \\
+Risk-triggered & $\tau=0.95$, $s=0$, $Q=4$ & 64,380 (508) & 11,571 & 0.00 & 288.8 & 88.7 & 99.37 \\
+Oracle & $s=0$, $Q=4$ & 58,624 (700) & 11,317 & 0.00 & 258.8 & 88.7 & 99.43 \\
+\bottomrule
+\end{tabular}
+\end{table}

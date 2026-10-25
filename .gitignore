@@ -1,10 +1,16 @@
+# Python runtime and local environment files
 __pycache__/
-*.pyc
+*.py[cod]
 .venv/
+
+# Local input datasets are obtained separately; do not publish copies.
 data/*.csv
 CMaps/*.txt
+
+# Model artifacts can be regenerated from the supplied scripts.
 results/models/
-results/bo_curves.json
-results/bo_final_predictions.csv
-results/bo_oof_predictions.csv
-results/iot_features_FD*.csv
+
+# Operating-system and editor metadata
+.DS_Store
+Thumbs.db
+.vscode/

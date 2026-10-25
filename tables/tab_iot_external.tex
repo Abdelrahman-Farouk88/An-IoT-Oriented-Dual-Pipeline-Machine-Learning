@@ -1,8 +1,10 @@
 \begin{table}[H]
 \centering
-\caption{External domain-shift stress tests. The same 15 FD001 sensor channels are
-used in every dataset; FD002 and FD004 are scaled within six operating-regime clusters.
-FD001 is the untouched 30-engine holdout; FD002--FD004 are 30\% engine holdouts.}
+\caption{Cross-subset replications. The same 15 FD001 sensor channels are used in every
+dataset; FD002 and FD004 are scaled within six operating-regime clusters. Models are
+retrained on each subset's training engines; FD001 is the untouched 30-engine holdout
+and FD002--FD004 are 30\% engine holdouts. Strict frozen transfer is reported separately
+in Table~\ref{tab:iot-transfer}.}
 \label{tab:iot-external}
 \small
 \begin{tabular}{llcccc}

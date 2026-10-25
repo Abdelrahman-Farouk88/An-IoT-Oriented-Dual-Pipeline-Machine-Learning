@@ -1,0 +1,17 @@
+\begin{table}[H]
+\centering
+\caption{Sensitivity of the tuned policies to the failure-cost and lead-time assumptions. Values are mean total simulation cost over ten held-out seeds. The policies are not retuned within each scenario.}
+\label{tab:sim-sensitivity}
+\small
+\begin{tabular}{lccccc}
+\toprule
+Scenario & Reactive & Calendar & Risk-triggered & Oracle & Risk vs.\ reactive (\%) \\
+\midrule
+Base & 391,161 & 112,214 & 64,330 & 58,716 & 83.6 \\
+Failure cost $750$ & 211,086 & 112,214 & 64,330 & 58,716 & 69.5 \\
+Failure cost $3{,}000$ & 751,311 & 112,214 & 64,330 & 58,716 & 91.4 \\
+Lead time $\times 0.75$ & 390,264 & 109,218 & 63,104 & 57,644 & 83.8 \\
+Lead time $\times 1.5$ & 392,712 & 118,252 & 67,840 & 62,554 & 82.7 \\
+\bottomrule
+\end{tabular}
+\end{table}
